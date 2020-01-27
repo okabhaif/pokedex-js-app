@@ -8,7 +8,7 @@ var pokemon= [
       weakness:'Ground',
       height: 0.4m,
       evolutionStage: 'Basic',
-    };
+    },
 
     {
       name:'Raichu',
@@ -16,7 +16,7 @@ var pokemon= [
       weakness:'Ground',
       height: 0.8m,
       evolutionStage: 'stageOne',
-    };
+    },
 
     {
       name: 'Bulbasaur',
@@ -24,7 +24,7 @@ var pokemon= [
       weakness: ['Ground', 'Psychic', 'Flying', 'Fire', 'Ice'],
       height: 0.7m,
       evolutionStage: 'Basic',
-    };
+    },
 
     {
       name:'Ivysaur',
@@ -32,7 +32,7 @@ var pokemon= [
       weakness: ['Ground', 'Psychic', 'Flying', 'Fire', 'Ice'],
       height: 1.0m,
       evolutionStage: 'stageOne',
-    };
+    },
 
     {
       name:'Venusaur',
@@ -40,7 +40,7 @@ var pokemon= [
       weakness: ['Ground', 'Psychic', 'Flying', 'Fire', 'Ice'],
       height: 2.0m,
       evolutionStage: 'stageTwo',
-    };
+    },
 
     {
       name:'Charmander',
@@ -48,7 +48,7 @@ var pokemon= [
       weakness: ['Ground', 'Rock', 'Water'],
       height: 0.6m,
       evolutionStage: 'Basic',
-    };
+    },
 
     {
       name:'Charmeleon',
@@ -56,7 +56,7 @@ var pokemon= [
       weakness: ['Ground', 'Rock', 'Water'],
       height: 1.1m,
       evolutionStage: 'stageOne',
-    };
+    },
 
     {
       name:'Charizard',
@@ -64,7 +64,7 @@ var pokemon= [
       weakness: ['Ground', 'Rock', 'Water'],
       height: 1.7m,
       evolutionStage: 'stageTwo',
-    };
+    },
 
     {
       name:'Squirtle',
@@ -72,7 +72,7 @@ var pokemon= [
       weakness: ['Grass', 'Electric'],
       height: 0.5m,
       evolutionStage: 'Basic',
-    };
+    },
 
     {
       name:'Wartortle',
@@ -80,7 +80,7 @@ var pokemon= [
       weakness: ['Grass', 'Electric'],
       height: 1.0m,
       evolutionStage: 'stageOne',
-    };
+    },
 
     {
       name:'Blastoise',
@@ -88,7 +88,7 @@ var pokemon= [
       weakness: ['Grass', 'Electric'],
       height: 1.6m,
       evolutionStage: 'stageTwo',
-    };
+    },
 
     {
       name:'Eevee',
@@ -96,7 +96,7 @@ var pokemon= [
       weakness: ['Fighting'],
       height: 0.3m,
       evolutionStage: 'Basic',
-    };
+    },
 
     {
       name:'Vaporeon',
@@ -104,7 +104,7 @@ var pokemon= [
       weakness: ['Grass', 'Electric'],
       height: 1.0m,
       evolutionStage: 'stageOne',
-    };
+    },
 
     {
       name:'Jolteon',
@@ -112,7 +112,7 @@ var pokemon= [
       weakness:'Ground',
       height: 0.8m,
       evolutionStage: 'stageOne',
-    };
+    },
 
     {
       name:'Flareon',
@@ -120,5 +120,5 @@ var pokemon= [
       weakness: ['Ground', 'Rock', 'Water'],
       height: 0.9m,
       evolutionStage: 'stageOne',
-    };
+    },
 ]
