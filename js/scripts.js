@@ -1,12 +1,13 @@
 var pokemon= [
   //will draw out information re different pokemon for application
 
-    //var pokemon = {
+
     {
       name:'Pikachu',
       type:'Electric',
       weakness:'Ground',
       height: 0.4m,
+      evolutionStage: 'Basic',
     };
 
     {
@@ -14,6 +15,7 @@ var pokemon= [
       type:'Electric',
       weakness:'Ground',
       height: 0.8m,
+      evolutionStage: 'stageOne',
     };
 
     {
@@ -21,6 +23,7 @@ var pokemon= [
       type: ['Grass', 'Poison'],
       weakness: ['Ground', 'Psychic', 'Flying', 'Fire', 'Ice'],
       height: 0.7m,
+      evolutionStage: 'Basic',
     };
 
     {
@@ -28,6 +31,7 @@ var pokemon= [
       type: ['Grass', 'Poison'],
       weakness: ['Ground', 'Psychic', 'Flying', 'Fire', 'Ice'],
       height: 1.0m,
+      evolutionStage: 'stageOne',
     };
 
     {
@@ -35,6 +39,7 @@ var pokemon= [
       type: ['Grass', 'Poison'],
       weakness: ['Ground', 'Psychic', 'Flying', 'Fire', 'Ice'],
       height: 2.0m,
+      evolutionStage: 'stageTwo',
     };
 
     {
@@ -42,6 +47,7 @@ var pokemon= [
       type: 'Fire',
       weakness: ['Ground', 'Rock', 'Water'],
       height: 0.6m,
+      evolutionStage: 'Basic',
     };
 
     {
@@ -49,6 +55,7 @@ var pokemon= [
       type: 'Fire',
       weakness: ['Ground', 'Rock', 'Water'],
       height: 1.1m,
+      evolutionStage: 'stageOne',
     };
 
     {
@@ -56,6 +63,7 @@ var pokemon= [
       type: 'Fire',
       weakness: ['Ground', 'Rock', 'Water'],
       height: 1.7m,
+      evolutionStage: 'stageTwo',
     };
 
     {
@@ -63,6 +71,7 @@ var pokemon= [
       type: 'Water',
       weakness: ['Grass', 'Electric'],
       height: 0.5m,
+      evolutionStage: 'Basic',
     };
 
     {
@@ -70,6 +79,7 @@ var pokemon= [
       type: 'Water',
       weakness: ['Grass', 'Electric'],
       height: 1.0m,
+      evolutionStage: 'stageOne',
     };
 
     {
@@ -77,6 +87,7 @@ var pokemon= [
       type: 'Water',
       weakness: ['Grass', 'Electric'],
       height: 1.6m,
+      evolutionStage: 'stageTwo',
     };
 
     {
@@ -84,6 +95,7 @@ var pokemon= [
       type: 'Normal',
       weakness: ['Fighting'],
       height: 0.3m,
+      evolutionStage: 'Basic',
     };
 
     {
@@ -91,6 +103,7 @@ var pokemon= [
       type: 'Water',
       weakness: ['Grass', 'Electric'],
       height: 1.0m,
+      evolutionStage: 'stageOne',
     };
 
     {
@@ -98,6 +111,7 @@ var pokemon= [
       type:'Electric',
       weakness:'Ground',
       height: 0.8m,
+      evolutionStage: 'stageOne',
     };
 
     {
@@ -105,5 +119,6 @@ var pokemon= [
       type: 'Fire',
       weakness: ['Ground', 'Rock', 'Water'],
       height: 0.9m,
+      evolutionStage: 'stageOne',
     };
 ]
