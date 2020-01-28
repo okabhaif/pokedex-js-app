@@ -135,10 +135,10 @@ var pokemon= [
 for (var i = 0; i < pokemon.length; i++) {
   document.write(pokemon[i].name +' \(Type\:'+pokemon[i].type+'\; Weakness\:'+pokemon[i].weakness+'\; Height\: '+pokemon[i].height+'m\)');
 
-  if (pokemon[i].height >= 1.0) {
+  if (pokemon[i].height >= 1.7) {
     document.write(' - Wow, that\'s big!! <br>')
   }
-  if (pokemon[i].height < 1.0) {
+  if (pokemon[i].height < 1.7) {
     document.write(' <br>')
   }
 };
