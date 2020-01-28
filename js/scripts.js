@@ -121,4 +121,7 @@ var pokemon= [
       height: '0.9m',
       evolutionStage: 'stageOne',
     },
-]
+];
+
+//trying to call the items needed expected : Pikachu (Height: 0.4; Type: Electric; Weakness: Ground)
+document.write(pokemon[0].name +' \(Height\: '+pokemon[0].height+'\; Type\: '+pokemon[0].type+'\; Weakness\: '+pokemon[0].weakness+'\)')
