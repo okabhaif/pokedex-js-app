@@ -128,5 +128,5 @@ var pokemon= [
 
 //preliminary loop
 for (var i = 0; i < pokemon.length; i++) {
-  document.write(pokemon[i].name +' \(Height\: '+pokemon[i].height+'m\; Type\: '+pokemon[i].type+'\; Weakness\: '+pokemon[i].weakness+'\) ');
+  document.write(pokemon[i].name +' \(Height\: '+pokemon[i].height+'m\; Type\: '+pokemon[i].type+'\; Weakness\: '+pokemon[i].weakness+'\) <br> ');
 };
