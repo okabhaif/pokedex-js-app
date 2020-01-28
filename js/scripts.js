@@ -127,6 +127,18 @@ var pokemon= [
 //document.write(pokemon[0].name +' \(Height\: '+pokemon[0].height+'\; Type\: '+pokemon[0].type+'\; Weakness\: '+pokemon[0].weakness+'\)')
 
 //preliminary loop
+//for (var i = 0; i < pokemon.length; i++) {
+//  document.write(pokemon[i].name +' \(Height\: '+pokemon[i].height+'m\; Type\: '+pokemon[i].type+'\; Weakness\: '+pokemon[i].weakness+'\) <br> ');
+//};
+
+
 for (var i = 0; i < pokemon.length; i++) {
-  document.write(pokemon[i].name +' \(Height\: '+pokemon[i].height+'m\; Type\: '+pokemon[i].type+'\; Weakness\: '+pokemon[i].weakness+'\) <br> ');
+  document.write(pokemon[i].name +' \(Height\: '+pokemon[i].height+'m\; Type\: '+pokemon[i].type+'\; Weakness\: '+pokemon[i].weakness+'\)');
+
+  if (pokemon[i].height >= 1.0) {
+    document.write(' - You\'re HUGE!! <br>')
+  }
+  if (pokemon[i].height < 1.0) {
+    document.write(' <br>')
+  }
 };
