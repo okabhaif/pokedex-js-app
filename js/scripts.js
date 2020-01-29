@@ -1,6 +1,4 @@
-var pokemon= [
-  //will draw out information re different pokemon for application
-
+var pokemonRepo= [
 
     {
       name:'Pikachu',
@@ -123,7 +121,7 @@ var pokemon= [
     },
 ];
 
-pokemon.forEach(function(pokemonRepo){
+pokemonRepo.forEach(function(pokemonRepo){
   document.write(pokemonRepo.name +' \(Type\:'+pokemonRepo.type+'\; Weakness\:'+pokemonRepo.weakness+'\; Height\: '+pokemonRepo.height+'m\)');
   if (pokemonRepo.height >= 1.7) {
     document.write(' - Wow, that\'s big!! <br>')
@@ -132,4 +130,4 @@ pokemon.forEach(function(pokemonRepo){
     document.write(' <br>')
   }
 
-}); 
+});
