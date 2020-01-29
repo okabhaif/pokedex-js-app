@@ -121,13 +121,14 @@ var pokemonRepo= [
     },
 ];
 
-pokemonRepo.forEach(function(pokemonRepo){
-  document.write(pokemonRepo.name +' \(Type\:'+pokemonRepo.type+'\; Weakness\:'+pokemonRepo.weakness+'\; Height\: '+pokemonRepo.height+'m\)');
-  if (pokemonRepo.height >= 1.7) {
+function writePokemon(pokemonItem){
+  document.write(pokemonItem.name +' \(Type\:'+pokemonItem.type+'\; Weakness\:'+pokemonItem.weakness+'\; Height\: '+pokemonItem.height+'m\)');
+  if (pokemonItem.height >= 1.7) {
     document.write(' - Wow, that\'s big!! <br>')
   }
-  if (pokemonRepo.height < 1.7) {
+  if (pokemonItem.height < 1.7) {
     document.write(' <br>')
   }
+}
 
-});
+pokemonRepo.forEach(writePokemon);
