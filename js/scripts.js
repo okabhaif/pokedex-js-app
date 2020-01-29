@@ -123,22 +123,13 @@ var pokemon= [
     },
 ];
 
-//trying to call the items needed expected : Pikachu (Height: 0.4; Type: Electric; Weakness: Ground)
-//document.write(pokemon[0].name +' \(Height\: '+pokemon[0].height+'\; Type\: '+pokemon[0].type+'\; Weakness\: '+pokemon[0].weakness+'\)')
-
-//preliminary loop
-//for (var i = 0; i < pokemon.length; i++) {
-//  document.write(pokemon[i].name +' \(Height\: '+pokemon[i].height+'m\; Type\: '+pokemon[i].type+'\; Weakness\: '+pokemon[i].weakness+'\) <br> ');
-//};
-
-
-for (var i = 0; i < pokemon.length; i++) {
-  document.write(pokemon[i].name +' \(Type\:'+pokemon[i].type+'\; Weakness\:'+pokemon[i].weakness+'\; Height\: '+pokemon[i].height+'m\)');
-
-  if (pokemon[i].height >= 1.7) {
+pokemon.forEach(function(pokemonRepo){
+  document.write(pokemonRepo.name +' \(Type\:'+pokemonRepo.type+'\; Weakness\:'+pokemonRepo.weakness+'\; Height\: '+pokemonRepo.height+'m\)');
+  if (pokemonRepo.height >= 1.7) {
     document.write(' - Wow, that\'s big!! <br>')
   }
-  if (pokemon[i].height < 1.7) {
+  if (pokemonRepo.height < 1.7) {
     document.write(' <br>')
   }
-};
+
+}); 
