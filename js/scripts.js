@@ -122,7 +122,7 @@ var pokemonRepo= [
 ];
 
 function writePokemon(pokemonItem){
-  document.write(pokemonItem.name +' \(Type\:'+pokemonItem.type+'\; Weakness\:'+pokemonItem.weakness+'\; Height\: '+pokemonItem.height+'m\)');
+  document.write('<h2>'+ pokemonItem.name +'</h2> <p>'+' \(Type\:'+pokemonItem.type+'\; Weakness\:'+pokemonItem.weakness+'\; Height\: '+pokemonItem.height+'m\)');
   if (pokemonItem.height >= 1.7) {
     document.write(' - Wow, that\'s big!! <br>')
   }
