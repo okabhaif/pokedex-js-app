@@ -1,3 +1,4 @@
+var repository = (function() {
 var pokemonRepo= [
 
     {
@@ -120,6 +121,37 @@ var pokemonRepo= [
       evolutionStage: 'stageOne',
     },
 ];
+//filter test
+var filterByProperty = pokemonRepo.filter(function (e) {
+  return e.name === 'Pikachu';
+});
+console.log(filterByProperty);
+
+//object key validation test
+var validateObjectKeyExample = {name:'Venusaur',
+                                type: ' Poison',
+                                weakness: ' Ground',
+                                height: '2.0',
+                                evolutionStage: 'stageTwo',
+                              };
+
+  console.log(Object.keys(validateObjectKeyExample));
+
+function add(pokemon) {
+  if (typeof value === "object") {
+   pokemonRepo.push(pokemon);
+ }}
+
+ function getAll() {
+   return pokemonRepo;
+ }
+
+ return {
+   add: add,
+   getAll: getAll
+ };
+
+})();
 
 function writePokemon(pokemonItem){
   document.write('<h2>'+ pokemonItem.name +'</h2> <p>'+' \(<b>Type\:</b>'+pokemonItem.type+'\;<b> Weakness\:</b> '+pokemonItem.weakness+'\;<b> Height\: </b>'+pokemonItem.height+'m\)');
@@ -131,4 +163,4 @@ function writePokemon(pokemonItem){
   }
 }
 
-pokemonRepo.forEach(writePokemon);
+repository.getAll().forEach(writePokemon);
