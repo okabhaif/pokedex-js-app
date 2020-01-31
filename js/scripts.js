@@ -122,8 +122,8 @@ var pokemonRepo= [
     },
 ];
 //filter test
-var filterByProperty = pokemonRepo.filter(function (e) {
-  return e.name === 'Pikachu';
+var filterByProperty = pokemonRepo.filter(function (property) {
+  return property.name === 'Charmander';
 });
 console.log(filterByProperty);
 
