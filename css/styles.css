@@ -1,0 +1,10 @@
+.pokemonList {
+  display: inline;
+}
+
+.button--pokemonItem {
+
+  background-color: #555555;
+  color: white;
+
+}

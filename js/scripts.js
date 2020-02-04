@@ -153,14 +153,19 @@ function add(pokemon) {
 
 })();
 
+
+var $pokemonList = document.querySelector('.pokemonList');
+
 function writePokemon(pokemonItem){
-  document.write('<h2>'+ pokemonItem.name +'</h2> <p>'+' \(<b>Type\:</b>'+pokemonItem.type+'\;<b> Weakness\:</b> '+pokemonItem.weakness+'\;<b> Height\: </b>'+pokemonItem.height+'m\)');
-  if (pokemonItem.height >= 1.7) {
-    document.write('<b> - Wow, that\'s big!! </b> <br>')
-  }
-  if (pokemonItem.height < 1.7) {
-    document.write(' <br>')
-  }
+  var $listItem = document.createElement('li');
+  var $button = document.createElement('button');
+  var $pokemonName = document.querySelector('.name');
+  $button.innerText = [pokemonItem.name];
+  $button.classList.add('button--pokemonItem');
+  $listItem.appendChild($button);
+  $pokemonList.appendChild($listItem);
 }
+
+
 
 repository.getAll().forEach(writePokemon);
