@@ -121,6 +121,7 @@ var pokemonRepo= [
     evolutionStage: 'stageOne',
   },
 ];
+
 //filter by property test e.g by name:
 var filterByProperty = pokemonRepo.filter(function (property) {
   return property.name === 'Charmander';
@@ -135,17 +136,25 @@ var validateObjectKeyExample = {name:'Venusaur',
                                 evolutionStage: 'stageTwo',
                               };
 
-  console.log(Object.keys(validateObjectKeyExample));
+console.log(Object.keys(validateObjectKeyExample));
 
-  function addListItem(pokemonItem) {
-    var $listItem = document.createElement('li');
-    var $button = document.createElement('button');
-    var $pokemonName = document.querySelector('.name');
-    $button.innerText = [pokemonItem.name];
-    $button.classList.add('button--pokemonItem');
-    $listItem.appendChild($button);
-    $pokemonList.appendChild($listItem);
-  }
+function addListItem(pokemonItem) {
+
+  var $listItem = document.createElement('li');
+  var $button = document.createElement('button');
+  var $pokemonName = document.querySelector('.name');
+  $button.innerText = [pokemonItem.name];
+  $button.classList.add('button--pokemonItem');
+  $listItem.appendChild($button);
+  $pokemonList.appendChild($listItem);
+  $button.addEventListener('click', function(event) {
+  return showDetails(pokemonItem);
+  });
+}
+
+function showDetails(pokemonItem) {
+  console.log(pokemonItem)
+}
 
 function add(pokemon) {
   if (typeof value === "object") {
