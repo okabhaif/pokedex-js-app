@@ -1,145 +1,8 @@
 var repository = (function() {
-var pokemonRepo= [
-
-  {
-    name:'Pikachu',
-    type:' Electric',
-    weakness:' Ground',
-    height: '0.4',
-    evolutionStage: 'Basic',
-  },
-
-  {
-    name:'Raichu',
-    type:' Electric',
-    weakness:' Ground',
-    height: '0.8',
-    evolutionStage: 'stageOne',
-  },
-
-  {
-    name: 'Bulbasaur',
-    type: [' Grass', ' Poison'],
-    weakness: [' Ground', ' Psychic', ' Flying', ' Fire', ' Ice'],
-    height: '0.7',
-    evolutionStage: 'Basic',
-  },
-
-  {
-    name:'Ivysaur',
-    type: [' Grass', ' Poison'],
-    weakness: [' Ground', ' Psychic', ' Flying', ' Fire', ' Ice'],
-    height: '1.0',
-    evolutionStage: 'stageOne',
-  },
-
-  {
-    name:'Venusaur',
-    type: [' Grass', ' Poison'],
-    weakness: [' Ground', ' Psychic', ' Flying', ' Fire', ' Ice'],
-    height: '2.0',
-    evolutionStage: 'stageTwo',
-  },
-
-  {
-    name:'Charmander',
-    type: ' Fire',
-    weakness: [' Ground', ' Rock', ' Water'],
-    height: '0.6',
-    evolutionStage: 'Basic',
-  },
-
-  {
-    name:'Charmeleon',
-    type: ' Fire',
-    weakness: [' Ground', ' Rock', ' Water'],
-    height: '1.1',
-    evolutionStage: 'stageOne',
-  },
-
-  {
-    name:'Charizard',
-    type: ' Fire',
-    weakness: [' Ground', ' Rock', ' Water'],
-    height: '1.7',
-    evolutionStage: 'stageTwo',
-  },
-
-  {
-    name:'Squirtle',
-    type: ' Water',
-    weakness: [' Grass', ' Electric'],
-    height: '0.5',
-    evolutionStage: 'Basic',
-  },
-
-  {
-    name:'Wartortle',
-    type: ' Water',
-    weakness: [' Grass', ' Electric'],
-    height: '1.0',
-    evolutionStage: 'stageOne',
-  },
-
-  {
-    name:'Blastoise',
-    type: ' Water',
-    weakness: [' Grass', ' Electric'],
-    height: '1.6',
-    evolutionStage: 'stageTwo',
-  },
-
-  {
-    name:'Eevee',
-    type: ' Normal',
-    weakness: [' Fighting'],
-    height: '0.3',
-    evolutionStage: 'Basic',
-  },
-
-  {
-    name:'Vaporeon',
-    type: ' Water',
-    weakness: [' Grass', ' Electric'],
-    height: '1.0',
-    evolutionStage: 'stageOne',
-  },
-
-  {
-    name:'Jolteon',
-    type:' Electric',
-    weakness:' Ground',
-    height: '0.8',
-    evolutionStage: 'stageOne',
-  },
-
-  {
-    name:'Flareon',
-    type: ' Fire',
-    weakness: [' Ground', ' Rock', ' Water'],
-    height: '0.9',
-    evolutionStage: 'stageOne',
-  },
-];
-
-//filter by property test e.g by name:
-var filterByProperty = pokemonRepo.filter(function (property) {
-  return property.name === 'Charmander';
-});
-console.log(filterByProperty);
-
-//Testing keys within objects to ensure they are consistent.
-var validateObjectKeyExample = {name:'Venusaur',
-                                type: ' Poison',
-                                weakness: ' Ground',
-                                height: '2.0',
-                                evolutionStage: 'stageTwo',
-                              };
-
-console.log(Object.keys(validateObjectKeyExample));
+var pokemonRepo= [];
+var apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
 function addListItem(pokemonItem) {
-
   var $listItem = document.createElement('li');
   var $button = document.createElement('button');
   var $pokemonName = document.querySelector('.name');
@@ -152,30 +15,72 @@ function addListItem(pokemonItem) {
   });
 }
 
-function showDetails(pokemonItem) {
-  console.log(pokemonItem)
+function showDetails(item) {
+  repository.loadDetails(item).then(function () {
+    console.log(item);
+  });
 }
 
+
 function add(pokemon) {
-  if (typeof value === "object") {
-   pokemonRepo.push(pokemon);
- }}
+  if (typeof pokemon === "object") {
+    pokemonRepo.push(pokemon);
+ }
+}
 
  function getAll() {
    return pokemonRepo;
  }
 
+ function loadList() {
+    return fetch(apiUrl).then(function (response) {
+      return response.json();
+      })
+      .then(function (json) {
+        json.results.forEach(function (item) {
+          var pokemon = {
+          name: item.name,
+          detailsUrl: item.url
+        };
+        add(pokemon);
+        console.log(pokemon);
+      });
+    })
+    .catch(function (e) {
+      console.error(e);
+    })
+  }
+
+  function loadDetails(item) {
+    var url = item.detailsUrl;
+    return fetch(url).then(function (response) {
+      return response.json();
+    })
+    .then(function (details) {
+      // Now we add the details to the item
+      item.imageUrl = details.sprites.front_default;
+      item.height = details.height;
+      item.types = Object.keys(details.types);
+    })
+    .catch(function (e) {
+      console.error(e);
+    });
+  }
+
  return {
    add: add,
    getAll: getAll,
    addListItem: addListItem,
+   loadList: loadList,
+   loadDetails: loadDetails,
  };
 })();
 
 var $pokemonList = document.querySelector('.pokemonList');
 
-function writePokemon(pokemonItem){
-  repository.addListItem(pokemonItem);
-}
-
-repository.getAll().forEach(writePokemon);
+repository.loadList().then(function() {
+  // Now the data is loaded!
+  repository.getAll().forEach(function(pokemon){
+    repository.addListItem(pokemon);
+  });
+});
